@@ -1,0 +1,33 @@
+name: Task or slice
+description: Open a task or a slice.
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: Write the change you want. Write one observation. Write the reason for the work.
+      placeholder: |
+        What: Add GET /api/catalog/lookup.
+        Observation: The route is missing.
+        Why: Slice 1 needs this route.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Give the facts a person needs to act. Do not use the chat log as the source.
+      placeholder: |
+        Files: app/api/catalog/lookup/route.ts
+        Do not change other files.
+    validations:
+      required: true
+  - type: textarea
+    id: how-to-verify
+    attributes:
+      label: How to verify
+      description: List this repo's real verify commands and results. Use the repo's verify skill. The skill is under .cursor/skills/. Give the test count and the floor.
+      placeholder: |
+        One example is verify-family-librarian-web, Tests 54 passed, floor 54.
+    validations:
+      required: true
