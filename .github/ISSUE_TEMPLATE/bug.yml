@@ -1,0 +1,33 @@
+name: Bug report
+description: Report a bug with steps to check it.
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: Write what failed. Write one observation. Write why it is a bug.
+      placeholder: |
+        What: Health returns 503 with a reachable database.
+        Observation: GET /api/health returns 503.
+        Why: Health must return 200 when the database is up.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Give the facts a person needs to act. Do not use the chat log as the source.
+      placeholder: |
+        Path: /api/health
+        Commit: de0a18c40d9e7fc3d13e7b97b50a9a15658b1b69
+    validations:
+      required: true
+  - type: textarea
+    id: how-to-verify
+    attributes:
+      label: How to verify
+      description: List this repo's real verify commands and results. Use the repo's verify skill. The skill is under .cursor/skills/. Give the test count and the floor.
+      placeholder: |
+        One example is verify-family-librarian-web, Tests 54 passed, floor 54.
+    validations:
+      required: true
